@@ -15,6 +15,9 @@ return {
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.shfmt,
           nls.builtins.formatting.blue,
+          nls.builtins.formatting.cbfmt,
+          nls.builtins.formatting.prettierd,
+          nls.builtins.diagnostics.markdownlint,
         },
       }
     end,
@@ -24,6 +27,9 @@ return {
     opts = {
       ensure_installed = {
         "blue",
+        "cbfmt",
+        "prettierd",
+        "markdownlint",
       },
     },
   },
