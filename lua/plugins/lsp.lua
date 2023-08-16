@@ -4,6 +4,11 @@ return {
     opts = {
       autoformat = false,
     },
+    init = function()
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      keys[#keys + 1] = { "<leader>cf", "<cmd>FormatWrite<cr>" }
+      keys[#keys + 1] = { "<leader>cF", "<cmd>Format<cr>" }
+    end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -23,15 +28,15 @@ return {
           css = {
             require("formatter.filetypes.css").prettierd,
           },
-          go = {
-            require("formatter.filetypes.go").gofmt,
-          },
+          -- go = {
+          --   require("formatter.filetypes.go").gofmt,
+          -- },
           html = {
             require("formatter.filetypes.html").prettierd,
           },
-          java = {
-            require("formatter.filetypes.java").clangformat,
-          },
+          -- java = {
+          --   require("formatter.filetypes.java").clangformat,
+          -- },
           javascript = {
             require("formatter.filetypes.javascript").prettierd,
           },
@@ -61,7 +66,7 @@ return {
           yaml = {
             require("formatter.filetypes.yaml").prettierd,
           },
-        }
+        },
       }
     end,
   },
