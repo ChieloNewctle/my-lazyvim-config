@@ -3,7 +3,6 @@ return {
   config = function()
     require("autosave").setup({
       enable = true,
-      prompt_style = "notify",
     })
   end,
 }

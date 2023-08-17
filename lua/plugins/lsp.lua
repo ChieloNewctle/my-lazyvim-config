@@ -6,8 +6,7 @@ return {
     },
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = { "<leader>cf", "<cmd>FormatWrite<cr>" }
-      keys[#keys + 1] = { "<leader>cF", "<cmd>Format<cr>" }
+      keys[#keys + 1] = { "<leader>cf", false }
     end,
   },
   {
@@ -26,29 +25,29 @@ return {
             require("formatter.filetypes.cpp").clangformat,
           },
           css = {
-            require("formatter.filetypes.css").prettierd,
+            require("formatter.filetypes.css").prettier,
           },
           -- go = {
           --   require("formatter.filetypes.go").gofmt,
           -- },
           html = {
-            require("formatter.filetypes.html").prettierd,
+            require("formatter.filetypes.html").prettier,
           },
           -- java = {
           --   require("formatter.filetypes.java").clangformat,
           -- },
           javascript = {
-            require("formatter.filetypes.javascript").prettierd,
+            require("formatter.filetypes.javascript").prettier,
           },
           json = {
             require("formatter.filetypes.json").fixjson,
-            require("formatter.filetypes.json").prettierd,
+            require("formatter.filetypes.json").prettier,
           },
           lua = {
             require("formatter.filetypes.lua").stylua,
           },
           markdown = {
-            require("formatter.filetypes.markdown").prettierd,
+            require("formatter.filetypes.markdown").prettier,
           },
           python = {
             {
@@ -64,7 +63,18 @@ return {
             require("formatter.filetypes.toml").taplo,
           },
           yaml = {
-            require("formatter.filetypes.yaml").prettierd,
+            require("formatter.filetypes.yaml").prettier,
+          },
+          ["*"] = {
+            require("formatter.filetypes.any").remove_trailing_whitespace,
+            function()
+              -- Ignore already configured types.
+              local defined_types = require("formatter.config").values.filetype
+              if defined_types[vim.bo.filetype] ~= nil then
+                return nil
+              end
+              vim.lsp.buf.format({ async = true })
+            end,
           },
         },
       }
@@ -75,7 +85,7 @@ return {
     opts = {
       ensure_installed = {
         "clang-format",
-        "prettierd",
+        "prettier",
         "fixjson",
         "stylua",
         "black",
