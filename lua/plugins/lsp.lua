@@ -59,6 +59,12 @@ return {
           sh = {
             require("formatter.filetypes.sh").shfmt,
           },
+          typescript = {
+            require("formatter.filetypes.typescript").prettier,
+          },
+          typescriptreact = {
+            require("formatter.filetypes.typescriptreact").prettier,
+          },
           toml = {
             require("formatter.filetypes.toml").taplo,
           },
