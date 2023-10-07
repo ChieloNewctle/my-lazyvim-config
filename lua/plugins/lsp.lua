@@ -10,10 +10,6 @@ return {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    enabled = false,
-  },
-  {
     "mhartington/formatter.nvim",
     opts = function()
       return {
