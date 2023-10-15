@@ -9,6 +9,7 @@ return {
       keys[#keys + 1] = { "<leader>cf", false }
     end,
   },
+  { "udalov/kotlin-vim" },
   {
     "mhartington/formatter.nvim",
     opts = function()
