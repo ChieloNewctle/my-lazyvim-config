@@ -6,8 +6,8 @@ require("conform.formatters.black").args = {
   "-",
 }
 
-require("conform").formatters_by_ft.c = { "clangformat" }
-require("conform").formatters_by_ft.cpp = { "clangformat" }
+require("conform").formatters_by_ft.c = { "clang_format" }
+require("conform").formatters_by_ft.cpp = { "clang_format" }
 require("conform").formatters_by_ft.css = { "prettier" }
 require("conform").formatters_by_ft.html = { "prettier" }
 require("conform").formatters_by_ft.javascript = { "prettier" }
