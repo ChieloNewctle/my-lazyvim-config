@@ -1,4 +1,4 @@
-require("conform.formatters.shfmt").args = {
+require("conform.formatters.black").args = {
   "-S",
   "--stdin-filename",
   "$FILENAME",
@@ -20,8 +20,6 @@ require("conform").formatters_by_ft.typescript = { "prettier" }
 require("conform").formatters_by_ft.typescriptreact = { "prettier" }
 require("conform").formatters_by_ft.toml = { "taplo" }
 require("conform").formatters_by_ft.yaml = { "prettier" }
-require("conform").formatters_by_ft["*"] = { "codespell" }
-require("conform").formatters_by_ft["_"] = { "trim_whitespace" }
 
 return {
   {
@@ -35,7 +33,6 @@ return {
         "black",
         "shfmt",
         "taplo",
-        "codespell",
       },
     },
   },
