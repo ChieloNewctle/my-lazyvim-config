@@ -16,6 +16,3 @@ else
   vim.keymap.set("n", "<A-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
   vim.keymap.set("n", "<A-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
-
-vim.keymap.set("n", "<leader>cf", "<cmd>FormatWrite<cr>", { desc = "Format & Write" })
-vim.keymap.set("n", "<leader>cF", "<cmd>Format<cr>", { desc = "Format" })
