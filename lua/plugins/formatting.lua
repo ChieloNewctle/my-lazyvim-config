@@ -37,6 +37,7 @@ return {
           lua = { "stylua" },
           markdown = { "prettier" },
           python = {
+            "ruff",
             require("neoconf").get("python_formatter", default_python_formatter_opt).use_darker_for_py and "darker"
               or "black",
           },
@@ -59,6 +60,7 @@ return {
         "stylua",
         "black",
         "darker",
+        "ruff",
         "shfmt",
         "taplo",
       },
