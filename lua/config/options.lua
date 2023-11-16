@@ -24,3 +24,39 @@ else
 end
 
 vim.g.autoformat = false
+
+if vim.g.neovide then
+  vim.o.guifont = "RecMonoChielo Nerd Font:h11"
+
+  vim.o.linespace = 0
+  vim.g.neovide_scale_factor = 1.0
+
+  vim.g.neovide_padding_top = 0
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_left = 0
+
+  vim.g.neovide_floating_blur_amount_x = 2.0
+  vim.g.neovide_floating_blur_amount_y = 2.0
+
+  vim.g.neovide_transparency = 0.95
+
+  vim.g.neovide_scroll_animation_length = 0.3
+
+  vim.g.neovide_theme = "auto"
+
+  vim.g.neovide_refresh_rate = 144
+  vim.g.neovide_refresh_rate_idle = 12
+
+  vim.g.neovide_remember_window_size = true
+
+  vim.g.neovide_input_ime = true
+
+  vim.g.neovide_cursor_animation_length = 0.06
+  vim.g.neovide_cursor_trail_size = 0.7
+  vim.g.neovide_cursor_antialiasing = true
+  vim.g.neovide_cursor_animate_in_insert_mode = true
+  vim.g.neovide_cursor_animate_command_line = true
+  vim.g.neovide_cursor_unfocused_outline_width = 0.125
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+end
