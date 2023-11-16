@@ -19,6 +19,8 @@ if is_wsl then
     },
     cache_enabled = 0,
   }
+else
+  vim.cmd("set clipboard+=unnamedplus")
 end
 
 vim.g.autoformat = false
