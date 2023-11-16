@@ -26,7 +26,7 @@ end
 vim.g.autoformat = false
 
 if vim.g.neovide then
-  vim.o.guifont = "RecMonoChielo Nerd Font:h11"
+  vim.o.guifont = "RecMonoChielo Nerd Font,Noto Sans Mono CJK SC:h11"
 
   vim.o.linespace = 0
   vim.g.neovide_scale_factor = 1.0
