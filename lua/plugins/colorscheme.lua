@@ -40,4 +40,13 @@ return {
       colorscheme = "catppuccin",
     },
   },
+  {
+    "xiyaowong/transparent.nvim",
+    enabled = not vim.g.neovide,
+    lazy = false,
+    opts = {
+      extra_groups = { "NeoTreeNormal", "NeoTreeNormalNC" },
+      exclude_groups = { "NotifyBackground" },
+    },
+  },
 }
