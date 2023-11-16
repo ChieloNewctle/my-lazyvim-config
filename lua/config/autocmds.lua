@@ -40,6 +40,6 @@ vim.api.nvim_create_autocmd({ "User" }, {
   callback = disable_large_json_syntax,
 })
 
-vim.api.nvim_create_autocmd({ "UIEnter" }, {
+vim.api.nvim_create_autocmd({ "ChanOpen", "ChanInfo" }, {
   callback = require("config.options").set_neovide_options,
 })
