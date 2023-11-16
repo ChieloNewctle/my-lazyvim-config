@@ -7,7 +7,7 @@ local function disable_large_json_syntax()
     return
   end
 
-  local size = vim.fn.wordcount().bytes;
+  local size = vim.fn.wordcount().bytes
   if size <= 8192 then
     return
   end
@@ -38,4 +38,8 @@ vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, {
 vim.api.nvim_create_autocmd({ "User" }, {
   pattern = { "VeryLazy" },
   callback = disable_large_json_syntax,
+})
+
+vim.api.nvim_create_autocmd({ "UIEnter" }, {
+  callback = require("config.options").set_neovide_options,
 })

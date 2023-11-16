@@ -25,7 +25,10 @@ end
 
 vim.g.autoformat = false
 
-if vim.g.neovide then
+local function set_neovide_options()
+  if not vim.g.neovide then
+    return
+  end
   vim.o.guifont = "RecMonoChielo Nerd Font,Noto Sans Mono CJK SC:h11"
 
   vim.o.linespace = 0
@@ -60,3 +63,9 @@ if vim.g.neovide then
   vim.g.neovide_cursor_unfocused_outline_width = 0.125
   vim.g.neovide_cursor_vfx_mode = "railgun"
 end
+
+set_neovide_options()
+
+return {
+  set_neovide_options = set_neovide_options,
+}
