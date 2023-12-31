@@ -7,15 +7,27 @@ local is_wsl = vim.fn.has("wsl") == 1
 if is_wsl then
   -- This is NeoVim's recommended way to solve clipboard sharing if you use WSL
   -- See: https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
+  -- vim.g.clipboard = {
+  --   name = "WslClipboard",
+  --   copy = {
+  --     ["+"] = "clip.exe",
+  --     ["*"] = "clip.exe",
+  --   },
+  --   paste = {
+  --     ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  --     ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  --   },
+  --   cache_enabled = 0,
+  -- }
   vim.g.clipboard = {
-    name = "WslClipboard",
+    name = "win32yank-wsl",
     copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
     },
     paste = {
-      ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-      ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ["+"] = "win32yank.exe -o --crlf",
+      ["*"] = "win32yank.exe -o --crlf",
     },
     cache_enabled = 0,
   }
