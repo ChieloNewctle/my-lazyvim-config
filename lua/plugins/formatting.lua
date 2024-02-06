@@ -29,6 +29,7 @@ return {
         },
         formatters_by_ft = {
           c = { "clang_format" },
+          cmake = { "cmake_format" },
           cpp = { "clang_format" },
           css = { "prettier" },
           html = { "prettier" },
@@ -55,6 +56,7 @@ return {
     opts = {
       ensure_installed = {
         "clang-format",
+        "cmakelang",
         "prettier",
         "fixjson",
         "stylua",
