@@ -1,0 +1,14 @@
+{
+  "lspconfig": {
+    "rust_analyzer": {
+      "rust-analyzer.diagnostics.disabled": [
+        "inactive-code"
+      ]
+    },
+    "yamlls": {
+      "yaml.customTags": [
+        "!reference sequence"
+      ]
+    }
+  }
+}
