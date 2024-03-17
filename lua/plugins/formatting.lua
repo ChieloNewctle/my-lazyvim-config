@@ -6,14 +6,14 @@ local default_python_formatter_opt = {
 return {
   {
     "stevearc/conform.nvim",
-    dependencies = { "mason.nvim", "folke/neoconf.nvim" },
+    -- dependencies = { "mason.nvim", "folke/neoconf.nvim" },
     opts = function()
       return {
-        format = {
-          timeout_ms = 3000,
-          async = false, -- not recommended to change
-          quiet = false, -- not recommended to change
-        },
+        -- format = {
+        --   timeout_ms = 3000,
+        --   async = false, -- not recommended to change
+        --   quiet = false, -- not recommended to change
+        -- },
         formatters = {
           injected = { options = { ignore_errors = true } },
           black = {
@@ -25,6 +25,12 @@ return {
             prepend_args = require("neoconf").get("python_formatter", default_python_formatter_opt).skip_string_literal
                 and { "-S" }
               or {},
+          },
+          rustfmt = {
+            options = {
+              -- The default edition of Rust to use when no Cargo.toml file is found
+              default_edition = "2021",
+            },
           },
         },
         formatters_by_ft = {
@@ -42,6 +48,7 @@ return {
             require("neoconf").get("python_formatter", default_python_formatter_opt).use_darker_for_py and "darker"
               or "black",
           },
+          rust = { "rustfmt" },
           sh = { "shfmt" },
           typescript = { "prettier" },
           typescriptreact = { "prettier" },
