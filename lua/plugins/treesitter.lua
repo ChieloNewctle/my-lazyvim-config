@@ -5,7 +5,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opt = {
+    opts = {
       indent = {
         enable = false,
         disable = true,
