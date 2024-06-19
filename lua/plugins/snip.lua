@@ -33,7 +33,6 @@ return {
     dependencies = {
       "dcampos/nvim-snippy",
     },
-    ---@param opts cmp.ConfigSchema
     config = function(_, opts)
       local cmp = require("cmp")
       opts.snippet = {

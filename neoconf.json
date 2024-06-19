@@ -1,14 +1,5 @@
 {
   "lspconfig": {
-    "rust_analyzer": {
-      "rust-analyzer.cargo.runBuildScripts": true,
-      "rust-analyzer.lruCapacity": 1024,
-      "rust-analyzer.procMacro.enable": true,
-      "rust-analyzer.cargoFeatures.loadOutDirsFromCheck": true,
-      "rust-analyzer.diagnostics.disabled": [
-        "inactive-code"
-      ]
-    },
     "yamlls": {
       "yaml.customTags": [
         "!reference sequence"
