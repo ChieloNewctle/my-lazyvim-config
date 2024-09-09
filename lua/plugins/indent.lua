@@ -1,4 +1,11 @@
 return {
-  { "Darazaki/indent-o-matic", event = "BufReadPre" },
-  { "vidocqh/auto-indent.nvim", event = "BufReadPre" },
+  {
+    "nmac427/guess-indent.nvim",
+    config = function()
+      require("guess-indent").setup({
+        auto_cmd = true,
+      })
+    end,
+    lazy = false,
+  },
 }
