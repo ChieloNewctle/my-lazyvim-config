@@ -14,11 +14,10 @@ local function disable_large_json_syntax()
 
   require("lazy").load({
     wait = true,
-    plugins = { "nvim-treesitter", "vim-illuminate" },
+    plugins = { "nvim-treesitter" },
   })
 
   vim.cmd("TSBufDisable highlight")
-  vim.cmd("IlluminatePauseBuf")
   vim.bo.syntax = "off"
   vim.cmd("NoMatchParen")
 end

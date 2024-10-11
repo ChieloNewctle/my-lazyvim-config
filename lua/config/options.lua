@@ -35,6 +35,8 @@ else
   vim.cmd("set clipboard+=unnamedplus")
 end
 
+vim.g.lazyvim_picker = "telescope"
+
 vim.g.autoformat = false
 
 local function set_neovide_options()
