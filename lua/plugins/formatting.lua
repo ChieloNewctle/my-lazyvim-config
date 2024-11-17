@@ -54,7 +54,7 @@ return {
           typescript = { "prettier" },
           typescriptreact = { "prettier" },
           toml = { "taplo" },
-          yaml = { "prettier" },
+          yaml = { "yamlfmt" },
         },
       }
     end,
@@ -74,6 +74,7 @@ return {
         "shfmt",
         "stylua",
         "taplo",
+        "yamlfmt",
       },
     },
   },
