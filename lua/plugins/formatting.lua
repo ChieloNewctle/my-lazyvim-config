@@ -1,8 +1,3 @@
-local default_python_formatter_opt = {
-  use_darker_for_python = false,
-  skip_string_literal = true,
-}
-
 return {
   {
     "stevearc/conform.nvim",
@@ -16,16 +11,6 @@ return {
         -- },
         formatters = {
           injected = { options = { ignore_errors = true } },
-          black = {
-            prepend_args = require("neoconf").get("python_formatter", default_python_formatter_opt).skip_string_literal
-                and { "-S" }
-              or {},
-          },
-          darker = {
-            prepend_args = require("neoconf").get("python_formatter", default_python_formatter_opt).skip_string_literal
-                and { "-S" }
-              or {},
-          },
           rustfmt = {
             options = {
               -- The default edition of Rust to use when no Cargo.toml file is found
@@ -44,11 +29,7 @@ return {
           json = { "fixjson", "prettier" },
           lua = { "stylua" },
           markdown = { "prettier" },
-          python = {
-            "ruff",
-            require("neoconf").get("python_formatter", default_python_formatter_opt).use_darker_for_py and "darker"
-              or "black",
-          },
+          python = { "ruff_format" },
           rust = { "rustfmt" },
           sh = { "shfmt" },
           typescript = { "prettier" },
@@ -63,10 +44,8 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "black",
         "clang-format",
         "cmakelang",
-        "darker",
         "fixjson",
         "gersemi",
         "prettier",

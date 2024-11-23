@@ -5,6 +5,15 @@ return {
       inlay_hints = {
         enabled = true,
       },
+      servers = {
+        yamlls = {
+          settings = {
+            yaml = {
+              format = { enable = false },
+            },
+          },
+        },
+      },
     },
   },
 }
