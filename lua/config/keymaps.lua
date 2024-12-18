@@ -17,7 +17,7 @@ else
   vim.keymap.set("n", "<A-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
 
-vim.keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz", { remap = true })
-vim.keymap.set({ "n", "x" }, "<C-d>", "<C-d>zz", { remap = true })
-vim.keymap.set({ "n", "x" }, "<C-f>", "<C-f>zz", { remap = true })
-vim.keymap.set({ "n", "x" }, "<C-b>", "<C-b>zz", { remap = true })
+-- vim.keymap.set({ "n", "x" }, "<C-u>", "<C-u>zz", { remap = true })
+-- vim.keymap.set({ "n", "x" }, "<C-d>", "<C-d>zz", { remap = true })
+-- vim.keymap.set({ "n", "x" }, "<C-f>", "<C-f>zz", { remap = true })
+-- vim.keymap.set({ "n", "x" }, "<C-b>", "<C-b>zz", { remap = true })
