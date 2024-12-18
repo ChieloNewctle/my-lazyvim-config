@@ -31,7 +31,7 @@ local function set_neovide_options()
   if not vim.g.neovide then
     return
   end
-  vim.o.guifont = "RecMonoChielo Nerd Font,Noto Sans Mono CJK SC:h11"
+  vim.o.guifont = "RecMonoChielo Nerd Font Mono,Noto Sans Mono CJK SC:h11"
 
   vim.o.linespace = 0
   vim.g.neovide_scale_factor = 1.0
