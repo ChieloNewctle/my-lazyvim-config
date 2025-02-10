@@ -36,6 +36,7 @@ end
 return {
   {
     "kiyoon/jupynium.nvim",
+    enabled = vim.fn.isdirectory(vim.fn.expand "~/miniforge3/envs/jupynium"),
     build = "mamba run --no-capture-output -n jupynium pip install .",
     event = "BufWinEnter *.ju.py",
     config = function()
