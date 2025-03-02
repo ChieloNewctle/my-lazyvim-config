@@ -32,6 +32,8 @@ return {
           python = { "ruff_format" },
           rust = { "rustfmt" },
           sh = { "shfmt" },
+          zsh = { "shfmt" },
+          bash = { "shfmt" },
           typescript = { "prettier" },
           typescriptreact = { "prettier" },
           toml = { "taplo" },
