@@ -8,8 +8,8 @@ if os.execute("command -v xclip") == 0 then
   vim.g.clipboard = {
     name = "xclip",
     copy = {
-      ["+"] = "timeout 0.5 xclip -quiet -i -selection clipboard",
-      ["*"] = "timeout 0.5 xclip -quiet -i -selection primary",
+      ["+"] = "timeout 0.5 xclip -i -selection clipboard",
+      ["*"] = "timeout 0.5 xclip -i -selection primary",
     },
     paste = {
       ["+"] = "timeout 0.5 xclip -o -selection clipboard",
