@@ -2,26 +2,22 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- -- WSL Clipboard support
--- local is_wsl = vim.fn.has("wsl") == 1
--- if is_wsl then
---   -- This is NeoVim's recommended way to solve clipboard sharing if you use WSL
---   -- See: https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
---   vim.g.clipboard = {
---     name = "WslClipboard",
---     copy = {
---       ["+"] = "powershell.exe -noprofile -c \"chcp 65001 >$null; clip.exe\"",
---       ["*"] = "powershell.exe -noprofile -c \"chcp 65001 >$null; clip.exe\"",
---     },
---     paste = {
---       ["+"] = 'powershell.exe -noprofile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---       ["*"] = 'powershell.exe -noprofile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
---     },
---     cache_enabled = 0,
---   }
--- else
---   vim.cmd("set clipboard+=unnamedplus")
--- end
+vim.cmd("set clipboard+=unnamedplus")
+
+if os.execute("command -v xclip") == 0 then
+  vim.g.clipboard = {
+    name = "xclip",
+    copy = {
+      ["+"] = "timeout 0.5 xclip -quiet -i -selection clipboard",
+      ["*"] = "timeout 0.5 xclip -quiet -i -selection primary",
+    },
+    paste = {
+      ["+"] = "timeout 0.5 xclip -o -selection clipboard",
+      ["*"] = "timeout 0.5 xclip -o -selection primary",
+    },
+    cache_enabled = 1,
+  }
+end
 
 vim.g.lazyvim_picker = "telescope"
 
