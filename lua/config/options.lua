@@ -19,7 +19,7 @@ if os.execute("command -v xclip") == 0 then
   }
 end
 
-vim.g.lazyvim_picker = "telescope"
+vim.g.lazyvim_picker = "snacks"
 
 vim.g.autoformat = false
 
